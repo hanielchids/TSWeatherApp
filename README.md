@@ -1,4 +1,72 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# WeatherApp
+
+### Conventions
+
+- I used React Native, TypeScript, OpenWeatherAPI.
+- Variable and function names use camelCase.
+- Component names are in PascalCase.
+
+### Architecture
+
+It follows a simple architecture with key components:
+
+1. **Screens**: It handles data fetching, location access, and rendering the UI.
+2. **Styles**: A separate module containing styling definitions for the components. It enhances code readability and maintainability.
+3. **Assets**: Contains images and icons used in the application, organized based on weather conditions.
+4. **AsyncStorage**: Used for storing weather data locally when there is no internet connection.
+5. **Hooks**: Custom hooks for the Weather App
+6. **Utils**: Custom Utils for dates abd Weather
+7. **Types**: Type definitions
+
+
+
+### General Considerations
+
+- The API key is stored as an environment variable for security.
+- It checks for internet connectivity using the NetInfo library and retrieves data from local storage when offline.
+- Location permission is requested using the Expo Location library to get the user's coordinates for weather data retrieval.
+- Weather conditions are categorized, and appropriate background images and icons are displayed based on the weather condition.
+- Temperature units are displayed in Celsius (°C).
+- The application handles errors and provides feedback to the user.
+
+## Third-Party Dependencies
+
+The Weather App relies on the following third-party libraries and dependencies:
+
+1. **React**: The core library for building the user interface.
+2. **React Native**: A framework for building native mobile apps using React.
+3. **@react-native-community/netinfo**: Allows checking the device's internet connectivity status.
+4. **@react-native-async-storage/async-storage**: Provides an asynchronous storage system for storing weather data locally.
+5. **@react-native-community/geolocation**: Enables access to device location information.
+6. **OpenWeatherMap API**: Used for fetching weather data based on the user's location.
+
+## How to Build the Project
+
+To build and run the Weather App project, follow these steps:
+
+1. Clone the project repository.
+2. Install the project dependencies by running:
+   ```
+   npm install
+   ```
+3. Use your API key on `REACT_WEATHER_KEY` in `.env.example` ad rename it to `.env`. The url for `REACT_BASE_URL` is already there.
+4. Run the app on the device by executing:
+   ```
+   npm start
+   ```
+5. Follow the instructions in the terminal to open the app on your device or simulator.
+
+## Additional Notes
+
+- The application uses React hooks like `useState` and `useEffect` for state management and side effects.
+- It includes error handling using `try...catch` blocks to log errors.
+- The application includes a responsive design that adapts to different screen sizes.
+- Forecast data is displayed for the next five days.
+- Location access is requested explicitly to ensure proper functionality.
+- Weather data is stored locally using AsyncStorage to improve user experience when offline.
+
+<img src="./assets/IMG_3970.png" alt="screnshot">
+
 
 # Getting Started
 
@@ -7,15 +75,11 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
 To start Metro, run the following command from the _root_ of your React Native project:
 
 ```bash
 # using npm
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
 ## Step 2: Start your Application
@@ -27,9 +91,6 @@ Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _roo
 ```bash
 # using npm
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
 ### For iOS
@@ -37,43 +98,6 @@ yarn android
 ```bash
 # using npm
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
