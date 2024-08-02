@@ -65,7 +65,8 @@ To build and run the Weather App project, follow these steps:
 - Location access is requested explicitly to ensure proper functionality.
 - Weather data is stored locally using AsyncStorage to improve user experience when offline.
 
-<img src="./assets/IMG_3970.png" alt="screnshot">
+
+<img width="411" alt="Screenshot 2024-08-02 at 09 59 15" src="https://github.com/user-attachments/assets/253a5a69-4f48-4c64-bb06-1fb63ab6b9fa">
 
 
 # Getting Started
