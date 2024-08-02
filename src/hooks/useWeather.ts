@@ -55,7 +55,7 @@ const useWeather = () => {
             const { latitude, longitude } = position.coords;
 
             const weatherResponse = await fetch(
-              `${api.base}weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api.key}`
+              `${api.base}onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${api.key}`
             );
 
             const { main, weather, name, sys } = await weatherResponse.json();
@@ -91,7 +91,7 @@ const useWeather = () => {
               setLoading(false);
 
               const forecastResponse = await fetch(
-                `${api.base}forecast?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api.key}`
+                `${api.base}onecall/timemachine?lat=${latitude}&lon=${longitude}&dt={1586468027}&units=metric&appid=${api.key}`
               );
 
               const { cnt, list } = await forecastResponse.json();
